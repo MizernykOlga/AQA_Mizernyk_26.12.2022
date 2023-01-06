@@ -77,6 +77,7 @@ public class CounterStrike {
                 scanner.nextLine();
             }
         }
+
         //Second team, each score stored in a var, verification on entering int data type
 
         System.out.println("2nd team: ");
