@@ -152,10 +152,10 @@ public class CounterStrike {
 
         //teams average
         System.out.println();
-        int averageTeam1 = (firstTeamPlayer1 + firstTeamPlayer2 + firstTeamPlayer3 + firstTeamPlayer4 + firstTeamPlayer5) / 5;
+        double averageTeam1 = (double)(firstTeamPlayer1 + firstTeamPlayer2 + firstTeamPlayer3 + firstTeamPlayer4 + firstTeamPlayer5) / 5;
         System.out.println("First team average score is " + averageTeam1);
 
-        int averageTeam2 = (secondTeamPlayer1 + secondTeamPlayer2 + secondTeamPlayer3 + secondTeamPlayer4 + secondTeamPlayer5) / 5;
+        double averageTeam2 = (double)(secondTeamPlayer1 + secondTeamPlayer2 + secondTeamPlayer3 + secondTeamPlayer4 + secondTeamPlayer5) / 5;
         System.out.println("Second team average score is " + averageTeam2);
         System.out.println();
 
