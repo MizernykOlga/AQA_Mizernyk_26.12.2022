@@ -14,64 +14,59 @@ public class TwoDimensionalArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int m = 0;
-        int n = 0;
+        int n = getNumber(scanner, "N");
+        int m = getNumber(scanner, "M");
 
-        while (true) {
-            System.out.println("Enter matrix row: ");
-            if (scanner.hasNextInt()) {
-                m = scanner.nextInt();
-                scanner.nextLine();
-                break;
-            } else {
-                System.out.println("Oops, not a number. Try again!");
-                scanner.nextLine();
+
+        int[][] array1 = new int[n][m];
+        int[][] array2 = new int[m][n];
+
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[i].length; j++) {
+                array1[i][j] = (int) (Math.random() * 101);
             }
         }
 
-        while (true) {
-            System.out.println("Enter matrix column: ");
-            if (scanner.hasNextInt()) {
-                n = scanner.nextInt();
-                scanner.nextLine();
-                break;
-            } else {
-                System.out.println("Oops, not a number. Try again!");
-                scanner.nextLine();
-            }
-        }
-        scanner.close();
-
-        int[][] array = new int[m][n];
-        int[][] array2 = new int[n][m];
-
-        //fill in with random numbers
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = (int) (Math.random() * 101);
-            }
-        }
-
-        System.out.println();
-        System.out.println("Original array items:");
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(array[i][j] + "\t");
+        System.out.println("First array: ");
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[i].length; j++) {
+                System.out.print(array1[i][j] + "\t");
             }
             System.out.println();
         }
 
-        System.out.println();
-
-        //transpose matrix creation
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                array2[j][i] = array[i][j];
+        for (int i = 0; i < array2.length; i++) {
+            for (int j = 0; j < array2[i].length; j++) {
+                array2[i][j] = array1[j][i];
             }
         }
-        System.out.println("Transpose matrix:");
-        for (int[] r : array2) {
-            System.out.println(Arrays.toString(r));
+
+        System.out.println("Second array: ");
+        for (int i = 0; i < array2.length; i++) {
+            for (int j = 0; j < array2[i].length; j++) {
+                System.out.print(array2[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+    }
+    static int getNumber(Scanner scanner, String str) {
+//        int number = 0;
+        System.out.println("Please enter integer for " + str);
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int number = scanner.nextInt();
+                scanner.nextLine();
+                if (number < 0) {
+                    System.out.println("Wrong data! Please enter integer > 0");
+                } else {
+                    return number;
+                }
+            } else {
+                System.out.println("Wrong data! Try again");
+                scanner.nextLine();
+            }
+            scanner.close();
         }
     }
 }
