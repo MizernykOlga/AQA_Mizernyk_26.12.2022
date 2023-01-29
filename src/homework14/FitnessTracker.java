@@ -1,17 +1,19 @@
 package homework14;
 
 public class FitnessTracker {
-    private String name;
-    private int date;
-    private int month;
-    private int year;
-    private String email;
-    private int phoneNumber;
+    final String name;
+    final int date;
+    final int month;
+    final int year;
+    final String email;
+    final int phoneNumber;
 
     String surname;
     double weight;
     double pressure;
     int steps;
+
+    int age = 0;
 
     public FitnessTracker(String name, int date, int month, int year, String email, int phoneNumber, String surname, double weight, double pressure, int steps) {
         this.name = name;
@@ -24,11 +26,10 @@ public class FitnessTracker {
         this.weight = weight;
         this.pressure = pressure;
         this.steps = steps;
+        this.age = 2023 - year;
     }
 
-        int age = 0;
     void printAccountInfo(){
-        age = 2023 - year;
         System.out.println();
         System.out.println("Name: " + name + "\n" + "Age: " + age + "\n" + "Date: " + date + "\n" + "Month: " + month + "\n" + "Year: " + year + "\n" + "Email: " + email + "\n" + "Phone number: " + phoneNumber + "\n" + "Surname: " + surname + "\n" + "Weight: " + weight + "\n" + "Pressure: " + pressure +
                 "\n" + "Daily steps amount: " + steps);
@@ -43,51 +44,32 @@ public class FitnessTracker {
         return name;
     }
 
-    public void setName(String name) {
-
-        this.name = name;
-    }
 
     public int getDate() {
 
         return date;
     }
 
-    public void setDate(int date) {
-        this.date = date;
-    }
 
     public int getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
-        this.month = month;
-    }
 
     public int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getSurname() {
         return surname;
